@@ -230,6 +230,7 @@ public class CharMove : MonoBehaviour
     public void SetRange(int range)
     {
         _range = range;
+        //SetPath();
     }
     void StartAttack()//도착시 공격 시작
     {
@@ -282,8 +283,9 @@ public class CharMove : MonoBehaviour
         StartCoroutine(CRT_Stun(dur));
         float timer = 0;
         Vector3 airBoneDir = new Vector3(0f, 1f, 0f);
-        Vector3 startPos = transform.position;
-        while(timer < dur * 0.5f)
+        
+        
+        while (timer < dur * 0.5f)
         {
             timer += Time.deltaTime;
             transform.position += airBoneDir * _airboneSpeed * Time.deltaTime;
@@ -295,6 +297,8 @@ public class CharMove : MonoBehaviour
             transform.position -= airBoneDir * _airboneSpeed * Time.deltaTime;
             yield return null;
         }
+        Vector3 startPos = _hexNode._TilePos;
+        startPos.y = 1f;
         transform.position = startPos;
     }
     IEnumerator CRT_Stun(float dur)

@@ -11,9 +11,9 @@ public class StageSetter : MonoBehaviour
 
     public void DebugStageSetting()
     {
-        HexBoardMaker.Instance.SetEnemyUnit(eCHARTYPE.RekSai, 2,new Vector2(5, 5));
-        //HexBoardMaker.Instance.SetEnemyUnit(eCHARTYPE.Kassadin, 1, new Vector2(2, 7));
-        //HexBoardMaker.Instance.SetEnemyUnit(eCHARTYPE.Khazix, 1, new Vector2(3, 7));
+        HexBoardMaker.Instance.SetEnemyUnit(eCHARTYPE.Nidalee, 1,new Vector2(5, 5));
+        //HexBoardMaker.Instance.SetEnemyUnit(eCHARTYPE.Warwick, 1, new Vector2(2, 7));
+        //HexBoardMaker.Instance.SetEnemyUnit(eCHARTYPE.Ahri, 1, new Vector2(3, 7));
 
         StageManager.Instance.SetEnemyUnitCount(1);
     }

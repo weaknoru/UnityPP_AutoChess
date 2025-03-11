@@ -21,9 +21,18 @@ public class StageManager : MonoBehaviour
 
     int _playerCount = 0;
     int _enemyCount = 0;
+
+    List<GameObject> _selectedGo = new List<GameObject>();
     private void Awake()
     {
         _gameStartButton.onClick.AddListener(() => BTN_StartGame());
+    }
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.S))
+        {
+            GiveShieldPlayer(500f, 5f);
+        }
     }
     public void SetPlayerUnitCount(int count)
     {
@@ -64,7 +73,20 @@ public class StageManager : MonoBehaviour
     {
 
         CharManager.Instance.UpdatePath();
+        GiveShieldPlayer(200f, 20f);
 
+    }
+    void GiveShieldPlayer(float value, float dur)
+    {
+        for (int i = 0; i < _selectedGo.Count; i++)
+        {
+            CharHealth health = _selectedGo[i].GetComponent<CharHealth>();
+            health.SetShield(value, dur);
+        }
+    }
+    public void SetSelectedGo(List<GameObject> selectedGo)
+    {
+        _selectedGo = selectedGo;
     }
 
 }

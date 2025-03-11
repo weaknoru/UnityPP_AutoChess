@@ -12,6 +12,8 @@ public class MoveBar : MonoBehaviour
     public GameObject _HpBar => _hpBar;
     [Header("MP¹Ù"), SerializeField] GameObject _mpBar;
     public GameObject _MpBar => _mpBar;
+    [Header("½¯µå ¹Ù"), SerializeField] GameObject _shieldBar;
+    public GameObject _ShieldBar => _shieldBar;
     private void Awake()
     {
         

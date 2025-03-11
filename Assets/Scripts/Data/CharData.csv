@@ -14,10 +14,10 @@ ID,Char_Name,Char_Type,Char_Cost,Pref_Name,Level,MaxHp,Att,AttSpeed,MaxMp,StartM
 1004,카이사,KaiSa,5,pref_004,1,70000,55,1.25,125,50,20,20,2,Void,Assassin,Scout
 1004,카이사,KaiSa,5,pref_004,2,1260,99,1.25,125,50,20,20,2,Void,Assassin,Scout
 1004,카이사,KaiSa,5,pref_004,3,2520,198,1.25,125,50,20,20,2,Void,Assassin,Scout
-1005,니달리,Nidalee,1,pref_005,1,500,50,0.65,85,0,20,20,3,Wild,Shapeshifter,None
+1005,니달리,Nidalee,1,pref_005,1,50000,50,0.65,85,0,20,20,3,Wild,Shapeshifter,None
 1005,니달리,Nidalee,1,pref_005,2,900,90,0.65,85,0,20,20,3,Wild,Shapeshifter,None
 1005,니달리,Nidalee,1,pref_005,3,1620,162,0.65,85,0,20,20,3,Wild,Shapeshifter,None
-1006,워윅,Warwick,1,pref_006,1,650,50,0.6,150,50,30,20,1,Wild,Brawler,None
+1006,워윅,Warwick,1,pref_006,1,65000,50,0.6,150,50,30,20,1,Wild,Brawler,None
 1006,워윅,Warwick,1,pref_006,2,1170,90,0.6,150,50,30,20,1,Wild,Brawler,None
 1006,워윅,Warwick,1,pref_006,3,2340,180,0.6,150,50,30,20,1,Wild,Brawler,None
 1007,아리,Ahri,2,pref_007,1,450,50,0.55,75,0,20,20,3,Wild,Mage,None

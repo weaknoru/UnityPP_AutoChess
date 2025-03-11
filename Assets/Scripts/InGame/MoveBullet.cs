@@ -19,16 +19,22 @@ public class MoveBullet : MonoBehaviour
 
     IEnumerator CRT_MoveBullet()
     {
-        while (Vector3.Distance(transform.position, _targetObj.transform.position) > 0.05f)
+        Vector3 targetPos = _targetObj.transform.position;
+        while (Vector3.Distance(transform.position, targetPos) > 0.05f)
         {
-            transform.position = Vector3.MoveTowards(transform.position, _targetObj.transform.position, _speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, targetPos, _speed * Time.deltaTime);
             yield return null;
         }
 
         // 총알이 목표물에 도달하면 데미지 적용 후 비활성화
-        CharHealth health = _targetObj.GetComponent<CharHealth>();
-        health.LoseAdDamage(_damage);
-        _basicAttack.AddMana();
+        if(_targetObj != null)
+        {
+            CharHealth health = _targetObj.GetComponent<CharHealth>();
+            health.LoseAdDamage(_damage);
+            _basicAttack.AddMana();
+
+        }
+        
         gameObject.SetActive(false);
     }
     public void SetBasicAttack(BasicAttack basicAttack)

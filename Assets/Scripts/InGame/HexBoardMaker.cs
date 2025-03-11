@@ -160,6 +160,8 @@ public class HexBoardMaker : MonoBehaviour
 
         CharTile charTile = go.GetComponent<CharTile>();
         charTile.UpdateOnTile(tile);
+
+        CharManager.Instance.AddEnemyTrses(go.transform);
     }
     void SetTileList(Tile tile)
     {

@@ -35,10 +35,21 @@ public enum eSYNERGY
     Yordle,
     Robot
 }
+public enum eSTAT
+{
+    MaxHp,
+    Ad,
+    Ap,
+    AdSpeed,
+    Def,
+    Mr,
+    Range,
+    Mana
+}
 public class CStat
 {
     public float _maxHp { get; private set; }
-    public float _att { get; private set; }
+    public float _ad { get; private set; }
     public float _attSpeed { get; private set; }
     public float _maxMp { get; private set; }
     public float _startMp { get; private set; }
@@ -49,7 +60,7 @@ public class CStat
     public CStat(float maxHp, float att, float attSpeed, float maxMp, float startMp, float def, float mr, int range)
     {
         _maxHp = maxHp;
-        _att = att;
+        _ad = att;
         _attSpeed = attSpeed;
         _maxMp = maxMp;
         _startMp = startMp;
@@ -96,6 +107,48 @@ public class CChar
         _synergies = synergies;
     }
 }
+public class CIncreaseStat
+{
+    public float _maxHp { get; private set; }
+    public float _ad { get; private set; }
+    public float _ap { get; private set; }
+    public float _adSpeed { get; private set; }
+    public float _def { get; private set; }
+    public float _mr { get; private set; }
+    public int _range { get; private set; }
+    public float _mana { get; private set; }
+
+    public void IncreaseStat(eSTAT increaseStat, float value)
+    {
+        switch (increaseStat)
+        {
+            case eSTAT.MaxHp:
+                _maxHp += value;
+                break;
+            case eSTAT.Ad:
+                _ad += value;
+                break;
+            case eSTAT.Ap:
+                _ap += value;
+                break;
+            case eSTAT.AdSpeed:
+                _adSpeed += value;
+                break;
+            case eSTAT.Def:
+                _def += value;
+                break;
+            case eSTAT.Mr:
+                _mr += value;
+                break;
+            case eSTAT.Range:
+                _range += (int)value;
+                break;
+            case eSTAT.Mana:
+                _mana += value;
+                break;
+        }
+    }
+}
 public class CharInfo : MonoBehaviour
 {
     [Header("적 / 아군 구분"), SerializeField] eTILESTATE _state;
@@ -108,8 +161,9 @@ public class CharInfo : MonoBehaviour
     [Header("레벨"), SerializeField] int _level;
 
     [Header("최대 체력"), SerializeField] float _maxHp;
-    [Header("공격력"), SerializeField] float _att;
-    [Header("공격 속도"), SerializeField] float _attSpeed;
+    [Header("공격력"), SerializeField] float _ad;
+    [Header("주문력"), SerializeField] float _ap;
+    [Header("공격 속도"), SerializeField] float _adSpeed;
     [Header("최대 MP / 시작 MP"), SerializeField] 
     float _maxMp;
     float _startMp;
@@ -129,12 +183,17 @@ public class CharInfo : MonoBehaviour
     [SerializeField] CharTile _charTile;
     Tile _onTile = null;
     CStat _stat;
+    CIncreaseStat _increaseStat;
 
     Tile _startTile = null;
+
+    
     private void Awake()
     {
         _basicAttack.SetCharInfo(this);
         _charMove.SetCharInfo(this);
+
+        _increaseStat = new CIncreaseStat();
     }
     public void UpdateOnTile(Tile tile)
     {
@@ -149,18 +208,35 @@ public class CharInfo : MonoBehaviour
     {
         _stat = stat;
 
-        _maxHp = _stat._maxHp;
-        _att = _stat._att;
-        _attSpeed = _stat._attSpeed;
+        _maxHp = _stat._maxHp + _increaseStat._maxHp;
+        _ad = _stat._ad + _increaseStat._ad;
+        _adSpeed = _stat._attSpeed + _increaseStat._adSpeed;
         _maxMp = _stat._maxMp;
-        _startMp = _stat._startMp;
-        _def = _stat._def;
-        _mr = _stat._mr;
-        _range = _stat._range;
+        _startMp = _stat._startMp + _increaseStat._mana;
+        _def = _stat._def + _increaseStat._def;
+        _mr = _stat._mr + _increaseStat._mr;
+        _range = _stat._range + _increaseStat._range;
 
         _charMove.SetRange(_range);
-        _basicAttack.SetAttDamage(_att);
+        _basicAttack.SetAttDamage(_ad);
         _basicAttack.SetManaRecover(_maxMp, _startMp, _mpRecovery);
+    }
+    public void SetRange(int range)
+    {
+        _range = range;
+        _charMove.SetRange(_range);
+        
+    }
+    public void IncreaseStat(eSTAT increaseStat, float value)
+    {
+        _increaseStat.IncreaseStat(increaseStat, value);
+        SetStat(_stat);
+        /*
+        if(increaseStat == eSTAT.Range)
+        {
+            _charMove.FinishAttack();
+        }
+        */
     }
     public void SetMovable(bool isPlayer, Tile tile)
     {

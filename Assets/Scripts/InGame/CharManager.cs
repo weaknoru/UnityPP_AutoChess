@@ -16,6 +16,10 @@ public class CharManager : MonoBehaviour
         }
     }
 
+    List<Transform> _enemyTrses = new List<Transform>();
+    public List<Transform> _EnemyTrses => _enemyTrses;
+    List<Transform> _playerTrses = new List<Transform>();
+    public List<Transform> _PlayerTrses => _playerTrses;
 
     List<CharMove> _charMoves = new List<CharMove>();
     [Header("캐릭터 프리펩"), SerializeField] List<GameObject> _charPrefs;
@@ -42,6 +46,15 @@ public class CharManager : MonoBehaviour
     public void AddCharMove(CharMove charMove)
     {
         _charMoves.Add(charMove);
+    }
+
+    public void AddPlayerTrses(Transform trs)
+    {
+        _playerTrses.Add(trs);
+    }
+    public void AddEnemyTrses(Transform trs)
+    {
+        _enemyTrses.Add(trs);
     }
     public void UpdatePath()
     {

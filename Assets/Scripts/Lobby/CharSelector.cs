@@ -13,6 +13,8 @@ public class CharSelector : MonoBehaviour
 
     [SerializeField] CSVReader _csvReader;
 
+    List<GameObject> _selectedGo = new List<GameObject>();
+
     private void Start()
     {
         TestAwakeSetting();
@@ -23,8 +25,8 @@ public class CharSelector : MonoBehaviour
         StageManager.Instance.SetPlayerUnitCount(1);
 
         _collectedCharList.Clear();
-        //AddCollectedChar(eCHARTYPE.Kassadin, 1);
-        AddCollectedChar(eCHARTYPE.KaiSa, 1);
+        AddCollectedChar(eCHARTYPE.Warwick, 1);
+        //AddCollectedChar(eCHARTYPE.Gnar, 1);
         //AddCollectedChar(eCHARTYPE.Varus, 1);
     }
     public void SetUnitOnQueue()
@@ -50,20 +52,18 @@ public class CharSelector : MonoBehaviour
             charInfo.SetHealth(true);
 
             _playerQueues[i].PutCharacter(go);
+
+
+            _selectedGo.Add(go);
+            CharManager.Instance.AddPlayerTrses(go.transform);
         }
+        StageManager.Instance.SetSelectedGo(_selectedGo);
     }
+
     public void AddCollectedChar(eCHARTYPE charType, int level)
     {
         _collectedCharList.Add(charType, level);
-        /*
-        foreach(CChar cchar in _csvReader._CharData._CharDatas)
-        {
-            if(cchar._type == charType)
-            {
-                cchar.UpgradeLevel(level);
-            }
-        }
-        */
+        
     }
     
     /*
