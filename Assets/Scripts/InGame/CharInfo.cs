@@ -249,7 +249,7 @@ public class CharInfo : MonoBehaviour
     public void SetHealth(bool isPlayer)
     {
         _charHealth.SetIsPlayer(isPlayer);
-        CharManager.Instance.SpawnBar(_movable, _charHealth, _basicAttack);
+        CharManager.Instance.SpawnBar(_movable, _charHealth, _basicAttack, _level, _state);
         _charHealth.SetHealthStat(_maxHp, _def, _mr);
 
 

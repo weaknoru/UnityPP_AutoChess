@@ -20,14 +20,33 @@ public class CharSelector : MonoBehaviour
         TestAwakeSetting();
         SetUnitOnQueue();
     }
+    
     void TestAwakeSetting()
     {
         StageManager.Instance.SetPlayerUnitCount(1);
 
         _collectedCharList.Clear();
-        AddCollectedChar(eCHARTYPE.Warwick, 1);
+        //AddCollectedChar(eCHARTYPE.Warwick, 1);
         //AddCollectedChar(eCHARTYPE.Gnar, 1);
         //AddCollectedChar(eCHARTYPE.Varus, 1);
+
+        CharManager.Instance.CountCollectedChar(eCHARTYPE.Warwick);
+        CharManager.Instance.CountCollectedChar(eCHARTYPE.Nidalee);
+        CharManager.Instance.CountCollectedChar(eCHARTYPE.Nidalee);
+        CharManager.Instance.CountCollectedChar(eCHARTYPE.Nidalee);
+        eCHARTYPE[] collectedCharsArr = CharManager.Instance.GetCollectedChars();
+        /*
+        for(int i = 0; i < collectedCharsArr.Length; i++)
+        {
+            int level = CharManager.Instance.GetLevel(collectedCharsArr[i]);
+            AddCollectedChar(collectedCharsArr[i], level);
+        }
+        */
+        foreach(eCHARTYPE collectedChar in collectedCharsArr)
+        {
+            int level = CharManager.Instance.GetLevel(collectedChar);
+            AddCollectedChar(collectedChar, level);
+        }
     }
     public void SetUnitOnQueue()
     {

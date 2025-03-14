@@ -11432,8 +11432,9 @@ MonoBehaviour:
   _charType: 1
   _level: 0
   _maxHp: 0
-  _att: 0
-  _attSpeed: 0
+  _ad: 0
+  _ap: 0
+  _adSpeed: 0
   _maxMp: 0
   _def: 0
   _mr: 0
@@ -11497,6 +11498,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHp: 10
   _curHp: 0
+  _curShield: 0
   _charTile: {fileID: 0}
   _def: 10
   _mr: 0
@@ -17768,7 +17770,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &9107704756028717579
 Transform:
   m_ObjectHideFlags: 0

@@ -27,6 +27,7 @@ public class StageManager : MonoBehaviour
     {
         _gameStartButton.onClick.AddListener(() => BTN_StartGame());
     }
+    /*
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.S))
@@ -34,6 +35,7 @@ public class StageManager : MonoBehaviour
             GiveShieldPlayer(500f, 5f);
         }
     }
+    */
     public void SetPlayerUnitCount(int count)
     {
         _playerCount = count;
