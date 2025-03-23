@@ -7,12 +7,15 @@ public class QueueInfo : Tile
     [Header("대기열 인덱스"), SerializeField] float _queueIndex;
     [Header("챔피언 배치 위치"), SerializeField] Transform _charTrs;
 
-    [Header("플레이어 여부"), SerializeField] bool _isPlayerQueue = false;
-    public bool _IsPlayerQueue => _isPlayerQueue;
-
+    //[Header("플레이어 여부"), SerializeField] bool _isPlayerQueue = false;
+    //public bool _IsPlayerQueue => _isPlayerQueue;
+    private void Awake()
+    {
+        _isTile = false;
+    }
     public void SetIsPlayer(bool isPlayerQueue)
     {
-        _isPlayerQueue = isPlayerQueue;
+        _isPlayerTile = isPlayerQueue;
     }
     public override void PutCharacter(GameObject charObj)
     {

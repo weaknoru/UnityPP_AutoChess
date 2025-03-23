@@ -15,13 +15,15 @@ public class TileInfo : Tile
     [Header("타일 좌표"), SerializeField] Vector2 _tilePos;
     [Header("챔피언 배치 위치"), SerializeField] Transform _charTrs;
 
+    /*
     public bool _isPlayerTile = false;
     public bool _IsPlayerTile => _isPlayerTile;
-
+    */
     Renderer _renderer;
     private void Awake()
     {
         _renderer = GetComponentInChildren<Renderer>();
+        _isTile = true;
     }
     public void SetIsPlayer(bool isPlayerTile)
     {

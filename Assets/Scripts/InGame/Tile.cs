@@ -7,6 +7,8 @@ public abstract class Tile : MonoBehaviour
     public HexNode _hexNode;
     public eTILESTATE _state;
     public GameObject _onCharGo;
+    public bool _isTile;
+    public bool _isPlayerTile;
     public abstract void PutCharacter(GameObject charObj);
     public abstract void SetTileState(eTILESTATE state);
     public abstract void SetCharObj(GameObject charObj);

@@ -77,14 +77,18 @@ public class MovableUnit : MonoBehaviour
         {
             Transform tileTrs = hit.transform;
             TileInfo tileInfo = tileTrs.GetComponentInChildren<TileInfo>();
-            if(tileInfo != null)
+            Tile tile = tileTrs.GetComponentInChildren<Tile>();
+            if(tile._isTile)
             {
-                if (tileInfo._IsPlayerTile)
+                if (tile._isPlayerTile)
                 {
-                    _startTile.SetTileState(eTILESTATE.Empty);
-                    _startTile.SetCharObj(null);
-                    _startTile = tileInfo;
-
+                    
+                    if(!(tile._state == eTILESTATE.Player))
+                    {
+                        _startTile.SetTileState(eTILESTATE.Empty);
+                        _startTile.SetCharObj(null);
+                        _startTile = tile;
+                    }
                 }
                 else
                 {
@@ -95,11 +99,15 @@ public class MovableUnit : MonoBehaviour
             else
             {
                 QueueInfo queueInfo = tileTrs.GetComponentInChildren<QueueInfo>();
-                if(queueInfo._IsPlayerQueue)
+                if(tile._isPlayerTile)
                 {
-                    _startTile.SetTileState(eTILESTATE.Empty);
-                    _startTile.SetCharObj(null);
-                    _startTile = queueInfo;
+                    
+                    if (!(tile._state == eTILESTATE.Player))
+                    {
+                        _startTile.SetTileState(eTILESTATE.Empty);
+                        _startTile.SetCharObj(null);
+                        _startTile = tile;
+                    }
                 }
             }
             

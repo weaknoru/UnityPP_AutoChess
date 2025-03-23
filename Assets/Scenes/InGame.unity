@@ -350,9 +350,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _state: 0
   _onCharGo: {fileID: 0}
+  _isTile: 0
+  _isPlayerTile: 0
   _queueIndex: 6
   _charTrs: {fileID: 863528403}
-  _isPlayerQueue: 0
 --- !u!64 &39205497
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -867,9 +868,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _state: 0
   _onCharGo: {fileID: 0}
+  _isTile: 0
+  _isPlayerTile: 0
   _queueIndex: 7
   _charTrs: {fileID: 771693099}
-  _isPlayerQueue: 0
 --- !u!64 &140387635
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2099,9 +2101,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _state: 0
   _onCharGo: {fileID: 0}
+  _isTile: 0
+  _isPlayerTile: 1
   _queueIndex: 2
   _charTrs: {fileID: 135032835}
-  _isPlayerQueue: 1
 --- !u!64 &426653660
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2224,9 +2227,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _state: 0
   _onCharGo: {fileID: 0}
+  _isTile: 0
+  _isPlayerTile: 1
   _queueIndex: 6
   _charTrs: {fileID: 1424564914}
-  _isPlayerQueue: 1
 --- !u!64 &426887022
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2494,6 +2498,8 @@ MonoBehaviour:
   _barPref: {fileID: 1737945095429502781, guid: 80995371e4f153241afdbdfd72ff38cd, type: 3}
   _canvas: {fileID: 464264245}
   _skillSetter: {fileID: 937348691}
+  _level2Needs: 3
+  _level3Needs: 5
 --- !u!4 &463854524
 Transform:
   m_ObjectHideFlags: 0
@@ -3048,9 +3054,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _state: 0
   _onCharGo: {fileID: 0}
+  _isTile: 0
+  _isPlayerTile: 0
   _queueIndex: 0
   _charTrs: {fileID: 1848700826}
-  _isPlayerQueue: 0
 --- !u!64 &557882976
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4129,9 +4136,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _state: 0
   _onCharGo: {fileID: 0}
+  _isTile: 0
+  _isPlayerTile: 0
   _queueIndex: 5
   _charTrs: {fileID: 1462591069}
-  _isPlayerQueue: 0
 --- !u!64 &782468655
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5275,9 +5283,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _state: 0
   _onCharGo: {fileID: 0}
+  _isTile: 0
+  _isPlayerTile: 1
   _queueIndex: 0
   _charTrs: {fileID: 643923709}
-  _isPlayerQueue: 1
 --- !u!1001 &1051657892
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6715,9 +6724,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _state: 0
   _onCharGo: {fileID: 0}
+  _isTile: 0
+  _isPlayerTile: 0
   _queueIndex: 1
   _charTrs: {fileID: 992687035}
-  _isPlayerQueue: 0
 --- !u!64 &1342335033
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8243,9 +8253,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _state: 0
   _onCharGo: {fileID: 0}
+  _isTile: 0
+  _isPlayerTile: 1
   _queueIndex: 8
   _charTrs: {fileID: 247956649}
-  _isPlayerQueue: 1
 --- !u!64 &1606570752
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8368,9 +8379,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _state: 0
   _onCharGo: {fileID: 0}
+  _isTile: 0
+  _isPlayerTile: 1
   _queueIndex: 3
   _charTrs: {fileID: 531887867}
-  _isPlayerQueue: 1
 --- !u!64 &1619072416
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8555,9 +8567,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _state: 0
   _onCharGo: {fileID: 0}
+  _isTile: 0
+  _isPlayerTile: 0
   _queueIndex: 2
   _charTrs: {fileID: 352674111}
-  _isPlayerQueue: 0
 --- !u!64 &1642453844
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8774,9 +8787,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _state: 0
   _onCharGo: {fileID: 0}
+  _isTile: 0
+  _isPlayerTile: 0
   _queueIndex: 3
   _charTrs: {fileID: 1355892904}
-  _isPlayerQueue: 0
 --- !u!64 &1659971194
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9209,9 +9223,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _state: 0
   _onCharGo: {fileID: 0}
+  _isTile: 0
+  _isPlayerTile: 1
   _queueIndex: 7
   _charTrs: {fileID: 652018352}
-  _isPlayerQueue: 1
 --- !u!64 &1715013661
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9470,9 +9485,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _state: 0
   _onCharGo: {fileID: 0}
+  _isTile: 0
+  _isPlayerTile: 0
   _queueIndex: 8
   _charTrs: {fileID: 2092496054}
-  _isPlayerQueue: 0
 --- !u!64 &1751854736
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9800,9 +9816,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _state: 0
   _onCharGo: {fileID: 0}
+  _isTile: 0
+  _isPlayerTile: 0
   _queueIndex: 4
   _charTrs: {fileID: 1577398496}
-  _isPlayerQueue: 0
 --- !u!64 &1832072422
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10173,9 +10190,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _state: 0
   _onCharGo: {fileID: 0}
+  _isTile: 0
+  _isPlayerTile: 1
   _queueIndex: 1
   _charTrs: {fileID: 434771497}
-  _isPlayerQueue: 1
 --- !u!64 &1898960248
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10365,9 +10383,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _state: 0
   _onCharGo: {fileID: 0}
+  _isTile: 0
+  _isPlayerTile: 1
   _queueIndex: 4
   _charTrs: {fileID: 1682015380}
-  _isPlayerQueue: 1
 --- !u!64 &1931234802
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10897,9 +10916,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _state: 0
   _onCharGo: {fileID: 0}
+  _isTile: 0
+  _isPlayerTile: 1
   _queueIndex: 5
   _charTrs: {fileID: 1467442833}
-  _isPlayerQueue: 1
 --- !u!64 &2040581567
 MeshCollider:
   m_ObjectHideFlags: 0
